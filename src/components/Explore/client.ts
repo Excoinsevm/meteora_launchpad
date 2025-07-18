@@ -24,7 +24,7 @@ export class ApeClient {
       : GetGemsTokenListIndividualResponse;
   }> {
     return ky
-      .post(`${BASE_URL}/v1/pools/gems`, {
+      .post(`${BASE_URL}/v2/pools/gems`, {
         json: req,
         ...options,
       })
@@ -32,7 +32,7 @@ export class ApeClient {
   }
   static async getToken(req: GetTokenRequest, options?: Options): Promise<GetTokenResponse> {
     return ky
-      .get(`${BASE_URL}/v1/pools`, {
+      .get(`${BASE_URL}/v2/pools`, {
         searchParams: serializeParams({
           assetIds: [req.id],
         }),
@@ -60,7 +60,7 @@ export class ApeClient {
     options?: Options
   ): Promise<GetTxsResponse> {
     return ky
-      .get(`${BASE_URL}/v1/txs/${assetId}`, {
+      .get(`${BASE_URL}/v2/txs/${assetId}`, {
         searchParams: serializeParams(req),
         ...options,
       })
@@ -71,6 +71,6 @@ export class ApeClient {
     assetId: string,
     options?: Options
   ): Promise<GetTokenDescriptionResponse> {
-    return ky.get(`${BASE_URL}/v1/assets/${assetId}/description`, options).json();
+    return ky.get(`${BASE_URL}/v2/assets/${assetId}/description`, options).json();
   }
 }
