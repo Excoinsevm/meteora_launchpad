@@ -23,7 +23,7 @@ if (
 }
 
 const PRIVATE_R2_URL = `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`;
-const PUBLIC_R2_URL = 'https://pub-85c7f5f0dc104dc784e656b623d999e5.r2.dev';
+const PUBLIC_R2_URL = 'https://pub-9f7f396991ff4849b8eea89b8dd70aaa.r2.dev';
 
 // Types
 type UploadRequest = {
